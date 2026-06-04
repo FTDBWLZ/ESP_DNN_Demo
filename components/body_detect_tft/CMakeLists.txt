@@ -1,0 +1,9 @@
+idf_component_register(
+    SRCS
+        "body_detect_tft.cpp"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        tft_camera_common
+        pose_detect
+)

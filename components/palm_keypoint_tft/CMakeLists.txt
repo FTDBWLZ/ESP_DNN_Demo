@@ -1,0 +1,9 @@
+idf_component_register(
+    SRCS
+        "palm_keypoint_tft.cpp"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        tft_camera_common
+        hand_track_detect
+)

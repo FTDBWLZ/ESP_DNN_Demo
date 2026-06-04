@@ -1,0 +1,13 @@
+idf_component_register(
+    SRCS
+        "app_screen.cpp"
+        "app_camera.c"
+        "system.cpp"
+        "tft_draw_utils.cpp"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        esp32_camera
+        lcd
+        lvgl_gui
+)

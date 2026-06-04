@@ -1,0 +1,53 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=E:\Espressif_Tools\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe -DESP_PLATFORM=1 -DACTIVE_APP=4 -DCCACHE_ENABLE=1 C:\Users\19099\Desktop\ESP-DNN
+-- Minimal build - OFF
+-- ccache will be used for faster recompilation
+-- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
+-- Could not use 'git describe' to determine PROJECT_VER.
+-- Building ESP-IDF components for target esp32s3
+NOTICE: Using component placed at C:\Users\19099\Desktop\ESP-DNN\components\esp-dl for dependency "espressif/esp-dl"(introduced by component "hand_detect")
+NOTICE: Using component placed at C:\Users\19099\Desktop\ESP-DNN\components\esp-dl for dependency "espressif/esp-dl"(introduced by component "human_face_detect")
+NOTICE: Using component placed at C:\Users\19099\Desktop\ESP-DNN\components\esp-dl for dependency "espressif/esp-dl"(introduced by component "pedestrian_detect")
+NOTICE: Using component placed at C:\Users\19099\Desktop\ESP-DNN\components\esp-dl for dependency "espressif/esp-dl", specified in C:\Users\19099\Desktop\ESP-DNN\components\hand_detect\idf_component.yml
+NOTICE: Using component placed at C:\Users\19099\Desktop\ESP-DNN\components\esp-dl for dependency "espressif/esp-dl", specified in C:\Users\19099\Desktop\ESP-DNN\components\human_face_detect\idf_component.yml
+NOTICE: Using component placed at C:\Users\19099\Desktop\ESP-DNN\components\esp-dl for dependency "espressif/esp-dl", specified in C:\Users\19099\Desktop\ESP-DNN\components\pedestrian_detect\idf_component.yml
+NOTICE: Processing 4 dependencies:
+NOTICE: [1/4] espressif/dl_fft (0.4.0)
+NOTICE: [2/4] espressif/esp-dsp (1.8.0)
+NOTICE: [3/4] espressif/esp_new_jpeg (0.6.1)
+NOTICE: [4/4] idf (5.5.4)
+-- ESP-TEE is currently supported only on the esp32c6;esp32h2;esp32c5 SoCs
+-- Project sdkconfig file C:/Users/19099/Desktop/ESP-DNN/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- USING O3
+-- App "ESP_DNN" version: 1
+-- Adding linker script C:/Users/19099/Desktop/ESP-DNN/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script C:/Users/19099/Desktop/ESP-DNN/build/esp-idf/esp_system/ld/sections.ld.in
+-- Adding linker script E:/Espressif_V5.5.4/components/esp_rom/esp32s3/ld/esp32s3.rom.ld
+-- Adding linker script E:/Espressif_V5.5.4/components/esp_rom/esp32s3/ld/esp32s3.rom.api.ld
+-- Adding linker script E:/Espressif_V5.5.4/components/esp_rom/esp32s3/ld/esp32s3.rom.bt_funcs.ld
+-- Adding linker script E:/Espressif_V5.5.4/components/esp_rom/esp32s3/ld/esp32s3.rom.libgcc.ld
+-- Adding linker script E:/Espressif_V5.5.4/components/esp_rom/esp32s3/ld/esp32s3.rom.wdt.ld
+-- Adding linker script E:/Espressif_V5.5.4/components/esp_rom/esp32s3/ld/esp32s3.rom.version.ld
+-- Adding linker script E:/Espressif_V5.5.4/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_master.ld
+-- Adding linker script E:/Espressif_V5.5.4/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_50.ld
+-- Adding linker script E:/Espressif_V5.5.4/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_smp.ld
+-- Adding linker script E:/Espressif_V5.5.4/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_dtm.ld
+-- Adding linker script E:/Espressif_V5.5.4/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_test.ld
+-- Adding linker script E:/Espressif_V5.5.4/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_scan.ld
+-- Adding linker script E:/Espressif_V5.5.4/components/esp_rom/esp32s3/ld/esp32s3.rom.libc.ld
+-- Adding linker script E:/Espressif_V5.5.4/components/esp_rom/esp32s3/ld/esp32s3.rom.newlib.ld
+-- Adding linker script E:/Espressif_V5.5.4/components/soc/esp32s3/ld/esp32s3.peripherals.ld
+-- Selected TFT app: 4
+-- Components: app_update body_detect_tft bootloader bootloader_support color_code_tft cxx driver efuse esp-dl esp32_camera esp_app_format esp_bootloader_format esp_common esp_driver_ana_cmpr esp_driver_bitscrambler esp_driver_dac esp_driver_gpio esp_driver_gptimer esp_driver_i2c esp_driver_i2s esp_driver_jpeg esp_driver_ledc esp_driver_mcpwm esp_driver_parlio esp_driver_pcnt esp_driver_ppa esp_driver_rmt esp_driver_sdio esp_driver_sdm esp_driver_sdmmc esp_driver_sdspi esp_driver_spi esp_driver_tsens esp_driver_twai esp_driver_uart esp_driver_usb_serial_jtag esp_hw_support esp_mm esp_partition esp_pm esp_psram esp_ringbuf esp_rom esp_security esp_system esp_timer espressif__dl_fft espressif__esp-dsp espressif__esp_new_jpeg esptool_py face_detect face_detect_tft freertos hal hand_detect hand_track_detect heap human_face_detect lcd log lvgl_gui main mbedtls newlib nvs_flash palm_keypoint_tft partition_table pedestrian_detect pose_detect pthread sdmmc soc spi_flash tft_camera_common xtensa
+-- Component paths: E:/Espressif_V5.5.4/components/app_update C:/Users/19099/Desktop/ESP-DNN/components/body_detect_tft E:/Espressif_V5.5.4/components/bootloader E:/Espressif_V5.5.4/components/bootloader_support C:/Users/19099/Desktop/ESP-DNN/components/color_code_tft E:/Espressif_V5.5.4/components/cxx E:/Espressif_V5.5.4/components/driver E:/Espressif_V5.5.4/components/efuse C:/Users/19099/Desktop/ESP-DNN/components/esp-dl C:/Users/19099/Desktop/ESP-DNN/components/esp32_camera E:/Espressif_V5.5.4/components/esp_app_format E:/Espressif_V5.5.4/components/esp_bootloader_format E:/Espressif_V5.5.4/components/esp_common E:/Espressif_V5.5.4/components/esp_driver_ana_cmpr E:/Espressif_V5.5.4/components/esp_driver_bitscrambler E:/Espressif_V5.5.4/components/esp_driver_dac E:/Espressif_V5.5.4/components/esp_driver_gpio E:/Espressif_V5.5.4/components/esp_driver_gptimer E:/Espressif_V5.5.4/components/esp_driver_i2c E:/Espressif_V5.5.4/components/esp_driver_i2s E:/Espressif_V5.5.4/components/esp_driver_jpeg E:/Espressif_V5.5.4/components/esp_driver_ledc E:/Espressif_V5.5.4/components/esp_driver_mcpwm E:/Espressif_V5.5.4/components/esp_driver_parlio E:/Espressif_V5.5.4/components/esp_driver_pcnt E:/Espressif_V5.5.4/components/esp_driver_ppa E:/Espressif_V5.5.4/components/esp_driver_rmt E:/Espressif_V5.5.4/components/esp_driver_sdio E:/Espressif_V5.5.4/components/esp_driver_sdm E:/Espressif_V5.5.4/components/esp_driver_sdmmc E:/Espressif_V5.5.4/components/esp_driver_sdspi E:/Espressif_V5.5.4/components/esp_driver_spi E:/Espressif_V5.5.4/components/esp_driver_tsens E:/Espressif_V5.5.4/components/esp_driver_twai E:/Espressif_V5.5.4/components/esp_driver_uart E:/Espressif_V5.5.4/components/esp_driver_usb_serial_jtag E:/Espressif_V5.5.4/components/esp_hw_support E:/Espressif_V5.5.4/components/esp_mm E:/Espressif_V5.5.4/components/esp_partition E:/Espressif_V5.5.4/components/esp_pm E:/Espressif_V5.5.4/components/esp_psram E:/Espressif_V5.5.4/components/esp_ringbuf E:/Espressif_V5.5.4/components/esp_rom E:/Espressif_V5.5.4/components/esp_security E:/Espressif_V5.5.4/components/esp_system E:/Espressif_V5.5.4/components/esp_timer C:/Users/19099/Desktop/ESP-DNN/managed_components/espressif__dl_fft C:/Users/19099/Desktop/ESP-DNN/managed_components/espressif__esp-dsp C:/Users/19099/Desktop/ESP-DNN/managed_components/espressif__esp_new_jpeg E:/Espressif_V5.5.4/components/esptool_py C:/Users/19099/Desktop/ESP-DNN/components/face_detect C:/Users/19099/Desktop/ESP-DNN/components/face_detect_tft E:/Espressif_V5.5.4/components/freertos E:/Espressif_V5.5.4/components/hal C:/Users/19099/Desktop/ESP-DNN/components/hand_detect C:/Users/19099/Desktop/ESP-DNN/components/hand_track_detect E:/Espressif_V5.5.4/components/heap C:/Users/19099/Desktop/ESP-DNN/components/human_face_detect C:/Users/19099/Desktop/ESP-DNN/components/lcd E:/Espressif_V5.5.4/components/log C:/Users/19099/Desktop/ESP-DNN/components/lvgl_gui C:/Users/19099/Desktop/ESP-DNN/main E:/Espressif_V5.5.4/components/mbedtls E:/Espressif_V5.5.4/components/newlib E:/Espressif_V5.5.4/components/nvs_flash C:/Users/19099/Desktop/ESP-DNN/components/palm_keypoint_tft E:/Espressif_V5.5.4/components/partition_table C:/Users/19099/Desktop/ESP-DNN/components/pedestrian_detect C:/Users/19099/Desktop/ESP-DNN/components/pose_detect E:/Espressif_V5.5.4/components/pthread E:/Espressif_V5.5.4/components/sdmmc E:/Espressif_V5.5.4/components/soc E:/Espressif_V5.5.4/components/spi_flash C:/Users/19099/Desktop/ESP-DNN/components/tft_camera_common E:/Espressif_V5.5.4/components/xtensa
+-- Configuring done (15.9s)
+-- Generating done (3.7s)
+-- Build files have been written to: C:/Users/19099/Desktop/ESP-DNN/build
