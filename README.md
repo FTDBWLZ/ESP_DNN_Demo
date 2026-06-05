@@ -1,8 +1,14 @@
 # ESP-DNN TFT AI Demo Cluster
 
+[中文](#中文) | [English](#english)
+
+---
+
+## 中文
+
 基于 ESP32-S3 的深度学习 AI 视觉演示项目，使用 ESP-DL（Deep Learning）框架，在 TFT 显示屏上实时运行多种 AI 推理任务。
 
-## 功能概述
+### 功能概述
 
 本项目集成了 4 种 AI 视觉演示模式，通过摄像头采集图像并在 TFT 屏幕上实时显示推理结果：
 
@@ -15,14 +21,14 @@
 
 默认应用为模式 4（人体检测）。
 
-## 硬件要求
+### 硬件要求
 
 - **芯片**: ESP32-S3
 - **摄像头**: 兼容 ESP32-CAM 接口的摄像头模块
 - **显示屏**: SPI TFT LCD（通过 LVGL 驱动）
 - **PSRAM**: 需启用（模型推理需要较大内存）
 
-## 技术栈
+### 技术栈
 
 - **框架**: ESP-IDF v5.5.4
 - **深度学习**: [ESP-DL](https://github.com/espressif/esp-dl) v3.3.2
@@ -30,9 +36,9 @@
 - **DSP 库**: esp-dsp v1.8.0
 - **图像处理**: esp_new_jpeg v0.6.1, dl_fft v0.4.0
 
-## 项目结构
+### 项目结构
 
-```
+```text
 Esp_DNN_Demo/
 ├── main/                   # 主程序入口
 │   ├── main.c              # 应用选择与调度
@@ -60,14 +66,14 @@ Esp_DNN_Demo/
 └── dependencies.lock       # 依赖锁定文件
 ```
 
-## 构建
+### 构建
 
-### 前置条件
+#### 前置条件
 
 1. 安装 [ESP-IDF v5.5+](https://docs.espressif.com/projects/esp-idf/) 并正确配置环境变量
 2. 确保 `IDF_PATH` 环境变量指向 ESP-IDF 安装目录
 
-### 编译
+#### 编译
 
 ```powershell
 # 使用项目自带的 IDF 环境脚本
@@ -77,7 +83,7 @@ cmd /c tools\idf_env.cmd idf.py build
 cmd /c D:\IDF_PRO\IDF_PROJECT\tools\idf_env.cmd idf.py build
 ```
 
-### 切换应用模式
+#### 切换应用模式
 
 通过 `ACTIVE_APP` 编译选项选择演示模式：
 
@@ -88,13 +94,13 @@ cmd /c tools\idf_env.cmd idf.py -DACTIVE_APP=3 reconfigure build   # 人脸检�
 cmd /c tools\idf_env.cmd idf.py -DACTIVE_APP=4 reconfigure build   # 人体检测
 ```
 
-### 烧录
+#### 烧录
 
 ```powershell
 cmd /c tools\idf_env.cmd idf.py -p <端口> flash monitor
 ```
 
-## 分区表
+### 分区表
 
 | 分区名   | 类型 | 子类型  | 偏移     | 大小     |
 |----------|------|---------|----------|----------|
@@ -104,6 +110,118 @@ cmd /c tools\idf_env.cmd idf.py -p <端口> flash monitor
 | spiffs   | data | spiffs  | 0xA10000 | 0x5E0000 |
 | coredump | data | coredump| 0xFF0000 | 0x10000  |
 
-## 许可证
+### 许可证
 
 各组件分别遵循其原有的许可证。ESP-DL、esp-dsp 等组件版权归 Espressif 所有。
+
+---
+
+## English
+
+An ESP32-S3 deep-learning AI vision demo project based on the ESP-DL framework. It captures camera frames, runs multiple AI inference tasks, and displays real-time results on a TFT screen.
+
+### Features
+
+This project integrates four AI vision demo modes. Each mode captures images from the camera and displays inference results on the TFT screen in real time:
+
+| Mode | Application | Description |
+|------|-------------|-------------|
+| 1 | Color Code TFT | Color recognition and detection |
+| 2 | Palm Keypoint TFT | Palm keypoint detection |
+| 3 | Face Detect TFT | Face detection |
+| 4 | Body Detect TFT | Human body / pedestrian detection |
+
+The default application is mode 4, the body detection demo.
+
+### Hardware Requirements
+
+- **Chip**: ESP32-S3
+- **Camera**: Camera module compatible with the ESP32-CAM interface
+- **Display**: SPI TFT LCD driven through LVGL
+- **PSRAM**: Required, because model inference needs relatively large memory
+
+### Tech Stack
+
+- **Framework**: ESP-IDF v5.5.4
+- **Deep Learning**: [ESP-DL](https://github.com/espressif/esp-dl) v3.3.2
+- **GUI Library**: LVGL
+- **DSP Library**: esp-dsp v1.8.0
+- **Image Processing**: esp_new_jpeg v0.6.1, dl_fft v0.4.0
+
+### Project Structure
+
+```text
+Esp_DNN_Demo/
+├── main/                   # Main application entry
+│   ├── main.c              # Application selection and dispatch
+│   └── CMakeLists.txt      # Main component build configuration
+├── components/             # Custom components
+│   ├── body_detect_tft/    # Body detection TFT demo
+│   ├── color_code_tft/     # Color recognition TFT demo
+│   ├── face_detect/        # Face detection
+│   ├── face_detect_tft/    # Face detection TFT demo
+│   ├── hand_detect/        # Hand detection
+│   ├── hand_track_detect/  # Hand tracking detection
+│   ├── human_face_detect/  # Human face detection
+│   ├── palm_keypoint_tft/  # Palm keypoint TFT demo
+│   ├── pedestrian_detect/  # Pedestrian detection
+│   ├── pose_detect/        # Pose detection
+│   ├── tft_camera_common/  # Common TFT camera utilities
+│   ├── lcd/                # LCD/SPI display driver
+│   ├── lvgl_gui/           # LVGL GUI configuration
+│   ├── esp32_camera/       # ESP32 camera driver adapter
+│   └── esp-dl/             # ESP-DL deep learning library
+├── managed_components/     # ESP-IDF managed dependencies
+├── tools/                  # Build helper scripts
+├── partitions.csv          # Partition table configuration
+├── CMakeLists.txt          # Top-level CMake configuration
+└── dependencies.lock       # Dependency lock file
+```
+
+### Build
+
+#### Prerequisites
+
+1. Install [ESP-IDF v5.5+](https://docs.espressif.com/projects/esp-idf/) and configure the environment variables correctly.
+2. Make sure the `IDF_PATH` environment variable points to the ESP-IDF installation directory.
+
+#### Compile
+
+```powershell
+# Use the IDF environment script included in this project
+cmd /c tools\idf_env.cmd idf.py build
+
+# Or use a shared IDF environment
+cmd /c D:\IDF_PRO\IDF_PROJECT\tools\idf_env.cmd idf.py build
+```
+
+#### Switch Application Mode
+
+Use the `ACTIVE_APP` CMake option to select the demo mode:
+
+```powershell
+cmd /c tools\idf_env.cmd idf.py -DACTIVE_APP=1 reconfigure build   # Color recognition
+cmd /c tools\idf_env.cmd idf.py -DACTIVE_APP=2 reconfigure build   # Palm keypoint
+cmd /c tools\idf_env.cmd idf.py -DACTIVE_APP=3 reconfigure build   # Face detection
+cmd /c tools\idf_env.cmd idf.py -DACTIVE_APP=4 reconfigure build   # Body detection
+```
+
+#### Flash
+
+```powershell
+cmd /c tools\idf_env.cmd idf.py -p <PORT> flash monitor
+```
+
+### Partition Table
+
+| Name     | Type | Subtype | Offset   | Size     |
+|----------|------|---------|----------|----------|
+| nvs      | data | nvs     | 0x9000   | 0x5000   |
+| otadata  | data | ota     | 0xe000   | 0x2000   |
+| app0     | app  | ota_0   | 0x10000  | 0xA00000 |
+| spiffs   | data | spiffs  | 0xA10000 | 0x5E0000 |
+| coredump | data | coredump| 0xFF0000 | 0x10000  |
+
+### License
+
+Each component follows its original license. ESP-DL, esp-dsp, and related components are copyrighted by Espressif.
